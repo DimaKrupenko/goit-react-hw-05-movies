@@ -24,7 +24,7 @@ export const API = {
   },
 
   async searchMovie() {
-    const urlSearch = `${this.BASE_URL}${this.URL_SEARCH}?query=${this.query}?api_key=${this.API_KEY}`;
+    const urlSearch = `${this.BASE_URL}${this.URL_SEARCH}?query=${this.query}&api_key=${this.API_KEY}`;
     const response = await axios.get(urlSearch);
     return response.data.results;
   },
