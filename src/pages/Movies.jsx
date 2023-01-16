@@ -1,11 +1,12 @@
 import { API } from '../services/api'
-import { useEffect, useState } from "react";
+import {  useState } from "react";
 
 
 const Movies = () => {
     const [search, setSearch] = useState('')
     const [movieList, setMovieList] = useState('')
     
+    console.log(movieList)
     const onChange = (evt) => {
         setSearch(evt.target.value)
         }

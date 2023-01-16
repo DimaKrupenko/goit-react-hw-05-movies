@@ -6,7 +6,7 @@ import Movies from '../pages/Movies'
 
 export const App = () => {
   return (
-    <div
+    <div className={styles.App}
       // style={{
       //   height: '100vh',
       //   display: 'flex',
