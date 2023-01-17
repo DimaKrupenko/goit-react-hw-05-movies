@@ -8,9 +8,14 @@ export const API = {
   URL_TRENDING: 'trending/movie/day',
   URL_SEARCH: 'search/movie',
   query: [],
+  movieId: '',
 
   setQuery(query) {
     API.query = query;
+  },
+
+  setMovieId(movieId) {
+    API.movieId = movieId;
   },
 
   resetQuery() {
@@ -27,5 +32,11 @@ export const API = {
     const urlSearch = `${this.BASE_URL}${this.URL_SEARCH}?query=${this.query}&api_key=${this.API_KEY}`;
     const response = await axios.get(urlSearch);
     return response.data.results;
+  },
+
+  async getDetails() {
+    const urlDetails = `${this.BASE_URL}movie/${this.movieId}?api_key=${this.API_KEY}`;
+    const response = await axios.get(urlDetails);
+    return response.data;
   },
 };

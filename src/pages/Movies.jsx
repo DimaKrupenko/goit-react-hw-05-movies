@@ -1,18 +1,22 @@
 import { API } from '../services/api'
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useSearchParams } from "react-router-dom";
 
-
+ 
 
 const Movies = () => {
     const [search, setSearch] = useState('')
     const [movieLists, setMovieLists] = useState('')
+    const [searchParams, setSearchParams] = useSearchParams();
     
+        
     
     const onChange = (evt) => {
         setSearch(evt.target.value)
+        setSearchParams({ filter: evt.target.value })
         }
-       
+    
     const searchMovie = async () => {
            
         try {
@@ -25,7 +29,9 @@ const Movies = () => {
             catch (error) {
                 console.log(error)
             }
-}
+    }
+    
+ 
     
     return (
         <div>
@@ -43,4 +49,4 @@ const Movies = () => {
         </div>)
 }
 
-export default Movies
+export default Movies;

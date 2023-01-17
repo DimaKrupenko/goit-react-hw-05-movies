@@ -2,7 +2,8 @@ import styles from './styles.css'
 import { Routes, Route, Link } from "react-router-dom";
 import Home from '../pages/Home'
 import Movies from '../pages/Movies'
-
+import MovieDetails from '../pages/MovieDetails.jsx'
+import Cast from '../pages/Cast'
 
 export const App = () => {
   return (
@@ -23,10 +24,11 @@ export const App = () => {
         </nav>
       </header>
       <Routes>
-          <Route path="/" element={<Home />} /> 
+        <Route path="/" element={<Home />} /> 
+          <Route path=":Id" element={<MovieDetails />} />
           <Route path="movies" element={<Movies />} />
-
- 
+          <Route path="movies/:Id" element={<MovieDetails />} />
+            <Route path="movies/:Id/cast" element={<Cast />} />
        </Routes>
     </div>
   );
