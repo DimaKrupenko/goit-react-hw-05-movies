@@ -3,7 +3,7 @@ import { Routes, Route, Link } from "react-router-dom";
 import Home from '../pages/Home'
 import Movies from '../pages/Movies'
 import MovieDetails from '../pages/MovieDetails.jsx'
-import Cast from '../pages/Cast'
+import Cast from './Cast'
 
 export const App = () => {
   return (
@@ -25,10 +25,13 @@ export const App = () => {
       </header>
       <Routes>
         <Route path="/" element={<Home />} /> 
-          <Route path=":Id" element={<MovieDetails />} />
-          <Route path="movies" element={<Movies />} />
-          <Route path="movies/:Id" element={<MovieDetails />} />
-            <Route path="movies/:Id/cast" element={<Cast />} />
+        <Route path=":Id" element={<MovieDetails />}>
+          <Route path="cast" element={<Cast />} />
+        </Route>
+        <Route path="movies" element={<Movies />} />
+        <Route path="movies/:Id" element={<MovieDetails />}>
+            <Route path="cast" element={<Cast />} />
+        </Route>
        </Routes>
     </div>
   );

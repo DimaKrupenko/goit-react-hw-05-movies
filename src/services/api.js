@@ -39,4 +39,10 @@ export const API = {
     const response = await axios.get(urlDetails);
     return response.data;
   },
+
+  async getCast() {
+    const urlCast = `${this.BASE_URL}movie/${this.movieId}/credits?api_key=${this.API_KEY}`;
+    const response = await axios.get(urlCast);
+    return response.data.cast;
+  },
 };

@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { API } from '../services/api';
-import { Link } from 'react-router-dom';
+import { Link, Outlet } from 'react-router-dom';
 
 const MovieDetails = () => {
   const [movieId, setMovieId] = useState('');
@@ -14,8 +14,12 @@ const MovieDetails = () => {
       try {
         setMovieId(Id);
         API.setMovieId(movieId);
-        const detailMovies = await API.getDetails();
+        
+        if (movieId) {
+        const detailMovies = await API.getDetails(); 
         setDetails(detailMovies);
+        return
+        }
       } catch (error) {
         console.log(error);
       }
@@ -44,8 +48,10 @@ const MovieDetails = () => {
         {details.genres.map(genre => genre.name)}
       </p> */}
       <p>
-        <Link to={`${details.id}`}>Cast</Link>
+        <Link to='Cast'>Cast</Link>
       </p>
+              <Outlet />
+
     </div>
   );
 };
