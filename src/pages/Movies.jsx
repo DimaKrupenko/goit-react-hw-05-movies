@@ -11,7 +11,7 @@ const Movies = () => {
     const [searchParams, setSearchParams] = useSearchParams();
     
         
-    
+    console.log(searchParams)
     const onChange = (evt) => {
         setSearch(evt.target.value)
         setSearchParams({ filter: evt.target.value })
