@@ -50,6 +50,10 @@ const MovieDetails = () => {
       <p>
         <Link to='Cast'>Cast</Link>
       </p>
+      <p>
+        <Link to='Reviews'>Reviews</Link>
+      </p>
+
               <Outlet />
 
     </div>

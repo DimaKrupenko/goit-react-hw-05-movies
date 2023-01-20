@@ -45,4 +45,10 @@ export const API = {
     const response = await axios.get(urlCast);
     return response.data.cast;
   },
+
+  async getRevies() {
+    const urlReviews = `${this.BASE_URL}movie/${this.movieId}/reviews?api_key=${this.API_KEY}`;
+    const response = await axios.get(urlReviews);
+    return response.data.results;
+  },
 };

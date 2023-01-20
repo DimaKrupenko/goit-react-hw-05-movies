@@ -25,7 +25,6 @@ const Cast = () => {
        }
        getCast()
 }, [movieId, Id])
-    console.log(actors)
     return (
         <div>
             <ul>
@@ -36,10 +35,6 @@ const Cast = () => {
 
                     </li>
                 ))}
-                {/* {actors ?? <li key={actors.id}>
-                    {actors.name}
-
-                </li>} */}
             </ul>
     </div>
 )
