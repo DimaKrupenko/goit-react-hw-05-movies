@@ -34,3 +34,11 @@ a {
   text-decoration: none;
   color: black;
 }
+
+p {
+  width: 800px;
+}
+
+h2 {
+  width: 800px;
+}
