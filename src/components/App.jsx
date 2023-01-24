@@ -1,23 +1,24 @@
 import styles from './styles.css'
 import { Routes, Route, Link } from "react-router-dom";
+import { lazy } from "react";
 import Home from '../pages/Home'
 import Movies from '../pages/Movies'
 import MovieDetails from '../pages/MovieDetails.jsx'
 import Cast from './Cast'
 import Reviews from './Reviews'
 
+
+// const Home = lazy(() => import("../pages/Home"));
+// const Movies = lazy(() => import("../pages/Movies"));
+// const MovieDetails = lazy(() => import("../pages/MovieDetails"));
+// const Cast = lazy(() => import("./Cast"));
+// const Reviews = lazy(() => import("./Reviews"));
+
+
+
 export const App = () => {
   return (
-    <div className={styles.App}
-      // style={{
-      //   height: '100vh',
-      //   display: 'flex',
-      //   justifyContent: 'center',
-      //   alignItems: 'center',
-      //   fontSize: 40,
-      //   color: '#010101'
-      // }}
-    >
+    <div className={styles.App}>
       <header>
         <nav>
         <Link to="/">Home</Link>

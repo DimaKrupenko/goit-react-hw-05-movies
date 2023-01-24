@@ -1,7 +1,6 @@
 import { API } from '../services/api'
 import { useState } from "react";
-import { Link } from "react-router-dom";
-import { useSearchParams } from "react-router-dom";
+import { useSearchParams, Link, useLocation  } from "react-router-dom";
 
  
 
@@ -10,7 +9,8 @@ const Movies = () => {
     const [movieLists, setMovieLists] = useState('')
     const [searchParams, setSearchParams] = useSearchParams();
     
-        
+    const location = useLocation()
+
     console.log(searchParams)
     const onChange = (evt) => {
         setSearch(evt.target.value)
@@ -40,7 +40,7 @@ const Movies = () => {
         <ul>
             {movieLists && movieLists.map(movieList => (
             <li key={movieList.id}>
-                <Link to={`${movieList.id}`} >
+                <Link to={`${movieList.id}`} state={{from: location}} >
                     {movieList.title}
                 </Link>
             </li>

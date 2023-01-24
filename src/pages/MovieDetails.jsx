@@ -1,12 +1,13 @@
 import { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
 import { API } from '../services/api';
-import { Link, Outlet } from 'react-router-dom';
+import { Suspense } from "react";
+import { Link, Outlet, useParams } from 'react-router-dom';
 
 const MovieDetails = () => {
   const [movieId, setMovieId] = useState('');
   const [details, setDetails] = useState([]);
-
+  // const location = useLocation()
+  
   const { Id } = useParams();
 
   useEffect(() => {
@@ -28,15 +29,26 @@ const MovieDetails = () => {
   }, [movieId, Id]);
 
   return (
+    
     <div
        style={{
        
         display: 'flex',
-        gap: '30px',
+        gap: '10px',
        flexWrap: 'wrap'
       }}
     >
-      
+      <div
+        style={{
+        display: 'flex',
+    width: '1000px',
+    marginTop: '20px',
+      }}
+      >
+      <Link to='/'>Go back</Link>
+
+      </div>
+
       <img
         src={`https://image.tmdb.org/t/p/w500/${details.poster_path}`}
         alt=""
@@ -63,10 +75,9 @@ const MovieDetails = () => {
       </p>
       {/* <p>
         Genres <br />
-        {details.genres.map(genre => genre.name)}
+        {details.genres.name}
       </p> */}
        
-      
       <h3
         style={{
           width: '1500px'
@@ -77,8 +88,11 @@ const MovieDetails = () => {
       <p>
         <Link to='Reviews'>Reviews</Link>
       </p>
+      <Suspense fallback={<div>Loading subpage...</div>}>
+        
+        <Outlet />
 
-              <Outlet />
+      </Suspense>
 
     </div>
   );
