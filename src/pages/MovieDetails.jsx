@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react';
 import { API } from '../services/api';
 import { Suspense } from "react";
-import { Link, Outlet, useParams } from 'react-router-dom';
+import { Link, Outlet, useParams, useLocation } from 'react-router-dom';
 
 const MovieDetails = () => {
   const [movieId, setMovieId] = useState('');
   const [details, setDetails] = useState([]);
-  // const location = useLocation()
+  const location = useLocation()
   
   const { Id } = useParams();
 
@@ -45,7 +45,7 @@ const MovieDetails = () => {
     marginTop: '20px',
       }}
       >
-      <Link to='/'>Go back</Link>
+        <Link to={location.state?.from ?? '/'}>Go back</Link>
 
       </div>
 
