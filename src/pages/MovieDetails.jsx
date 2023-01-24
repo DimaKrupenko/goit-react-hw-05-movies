@@ -41,7 +41,7 @@ const MovieDetails = () => {
       <div
         style={{
         display: 'flex',
-    width: '1000px',
+    width: '100%',
     marginTop: '20px',
       }}
       >
@@ -61,13 +61,13 @@ const MovieDetails = () => {
       </h2>
       <p
         style={{
-          width: '1500px'
+    width: '100%',
         }}
       >User score: {details.popularity}</p>
       <h3>Overview</h3>
       <p
         style={{
-          width: '1500px'
+    width: '100%',
         }}
       >
         
@@ -80,7 +80,7 @@ const MovieDetails = () => {
        
       <h3
         style={{
-          width: '1500px'
+    width: '100%',
         }}>Additional information</h3>
       <p>
         <Link to='Cast'>Cast</Link>
