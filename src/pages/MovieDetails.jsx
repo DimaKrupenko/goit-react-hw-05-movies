@@ -59,11 +59,11 @@ const MovieDetails = () => {
         <br />
         {details.release_date}
       </h2>
-      <p
+      <h3
         style={{
     width: '100%',
         }}
-      >User score: {details.popularity}</p>
+      >User score: {details.popularity}</h3>
       <h3>Overview</h3>
       <p
         style={{
@@ -83,10 +83,27 @@ const MovieDetails = () => {
     width: '100%',
         }}>Additional information</h3>
       <p>
-        <Link to='Cast'>Cast</Link>
+        <Link to='cast'
+          style={{
+          display: 'flex',
+          justifyContent: 'center',
+          border: '1px solid black',
+          width: '65px',
+          marginLeft: '10px'
+
+        }}
+        >Cast</Link>
       </p>
       <p>
-        <Link to='Reviews'>Reviews</Link>
+        <Link to='reviews'
+          style={{
+          display: 'flex',
+          justifyContent: 'center',
+          border: '1px solid black',
+          width: '65px',
+          marginLeft: '10px'
+        }}
+        >Reviews</Link>
       </p>
       <Suspense fallback={<div>Loading subpage...</div>}>
         

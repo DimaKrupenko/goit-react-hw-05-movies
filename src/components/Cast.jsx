@@ -29,7 +29,14 @@ const Cast = () => {
         <div>
             <ul>
                 {actors && actors.map(actor => (
-                    <li key={actor.id}>
+                    <li key={actor.id}
+                    style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        border: '1px solid grey',
+                        marginBottom: '10px'
+                    }}
+                    >
                         <img src={`https://image.tmdb.org/t/p/w500/${actor.profile_path}`} alt="" />
                         {actor.name}
 
